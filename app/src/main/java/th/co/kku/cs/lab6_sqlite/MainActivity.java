@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         studentsRecyclerView.setItemAnimator(new DefaultItemAnimator());
         studentsRecyclerView.setAdapter(mAdapter);
 
-        studentsRecyclerView.addOnItemTouchListener(new RecycleTouchListener(this, studentsRecyclerView, new RecycleTouchListener.ClickListener() {
+        studentsRecyclerView.addOnItemTouchListener(new RecyclerTouchListner(this, studentsRecyclerView, new RecyclerTouchListner.ClickListener() {
             @Override
             public void onClick(View view, int position) {
 
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
     }
     private void showStudentDialog(final boolean shouldUpdate,final Student student,final int position){
         LayoutInflater layoutInflaterAndroid = LayoutInflater.from(getApplicationContext());
-        View view = layoutInflaterAndroid.inflate(R.layout.activity_student_dialog,null);
+        View view = layoutInflaterAndroid.inflate(R.layout.student_dialog,null);
 
         AlertDialog.Builder alertDialogBuilderUserInput = new AlertDialog.Builder(MainActivity.this);
         alertDialogBuilderUserInput.setView(view);
